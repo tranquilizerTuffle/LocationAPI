@@ -95,10 +95,12 @@ public class LocationActivity extends AppCompatActivity implements LocationListe
 
     }
     public void OpenMap (View view){
-        Intent i = new Intent(this, MapsActivity.class);
-        i.putExtra("latitude",location.getLatitude());
-        i.putExtra("longitude",location.getLongitude());
-        startActivity(i);
+        if (location != null) {
+            Intent i = new Intent(this, MapsActivity.class);
+            i.putExtra("latitude", location.getLatitude());
+            i.putExtra("longitude", location.getLongitude());
+            startActivity(i);
+        }
     }
 
     @Override
