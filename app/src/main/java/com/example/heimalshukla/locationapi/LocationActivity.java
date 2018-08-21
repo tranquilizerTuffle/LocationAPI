@@ -101,6 +101,9 @@ public class LocationActivity extends AppCompatActivity implements LocationListe
             i.putExtra("longitude", location.getLongitude());
             startActivity(i);
         }
+        else {
+            Toast.makeText(this, "Map Location Unknown", Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override
